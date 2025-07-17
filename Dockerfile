@@ -15,4 +15,4 @@ COPY . .
 EXPOSE 8000
 
 # Passo 6: Define o comando para executar quando o container iniciar.
-CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:8000"]
+CMD ["gunicorn", "--chdir", "/app", "app:app", "--bind", "0.0.0.0:8000"]
